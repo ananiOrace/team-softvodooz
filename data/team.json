@@ -1,0 +1,287 @@
+{
+  "team": {
+    "name": "Soft Vodooz",
+    "tagline": "Studio produit — logiciel, IA, design.",
+    "claim": "Une équipe, un seul bureau, des produits qui tiennent en production.",
+    "cta": {
+      "label": "Travailler avec nous",
+      "href": "https://softvodooz.com"
+    },
+    "stats": [
+      {
+        "value": "10",
+        "label": "personnes au bureau"
+      },
+      {
+        "value": "6",
+        "label": "métiers différents"
+      },
+      {
+        "value": "4",
+        "label": "pays livrés"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p01",
+      "name": "Koffi Ahouandjinou",
+      "role": "Développeur front-end",
+      "line": "Je passe mes journées à rendre cliquable ce qui n'existait qu'en Figma.",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/company/softvodooz"
+        },
+        {
+          "label": "Écrire",
+          "href": "mailto:contact@softvodooz.com"
+        }
+      ],
+      "box": {
+        "x": 0,
+        "y": 236,
+        "w": 232,
+        "h": 532
+      },
+      "focus": {
+        "x": 104,
+        "y": 302
+      }
+    },
+    {
+      "id": "p02",
+      "name": "Éric Dossou",
+      "role": "Ingénieur QA",
+      "line": "Je trouve les bugs avant vos utilisateurs. C'est plus élégant pour tout le monde.",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/company/softvodooz"
+        },
+        {
+          "label": "Écrire",
+          "href": "mailto:contact@softvodooz.com"
+        }
+      ],
+      "box": {
+        "x": 145,
+        "y": 262,
+        "w": 110,
+        "h": 218
+      },
+      "focus": {
+        "x": 200,
+        "y": 320
+      }
+    },
+    {
+      "id": "p03",
+      "name": "Amandine Houngbédji",
+      "role": "UX/UI Designer",
+      "line": "Un écran réussi, c'est un écran dont on ne remarque pas l'effort.",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/company/softvodooz"
+        },
+        {
+          "label": "Écrire",
+          "href": "mailto:contact@softvodooz.com"
+        }
+      ],
+      "box": {
+        "x": 170,
+        "y": 376,
+        "w": 220,
+        "h": 324
+      },
+      "focus": {
+        "x": 287,
+        "y": 455
+      }
+    },
+    {
+      "id": "p04",
+      "name": "Salomon Gbaguidi",
+      "role": "Développeur back-end",
+      "line": "Les API silencieuses sont celles qui fonctionnent.",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/company/softvodooz"
+        },
+        {
+          "label": "Écrire",
+          "href": "mailto:contact@softvodooz.com"
+        }
+      ],
+      "box": {
+        "x": 308,
+        "y": 278,
+        "w": 152,
+        "h": 330
+      },
+      "focus": {
+        "x": 370,
+        "y": 326
+      }
+    },
+    {
+      "id": "p05",
+      "name": "Roland Adjovi",
+      "role": "Architecte logiciel",
+      "line": "Je dessine les plans avant qu'on coule le béton.",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/company/softvodooz"
+        },
+        {
+          "label": "Écrire",
+          "href": "mailto:contact@softvodooz.com"
+        }
+      ],
+      "box": {
+        "x": 412,
+        "y": 286,
+        "w": 110,
+        "h": 180
+      },
+      "focus": {
+        "x": 466,
+        "y": 334
+      }
+    },
+    {
+      "id": "p06",
+      "name": "Basile Tossou",
+      "role": "Ingénieur IA",
+      "line": "Un modèle n'est utile que le jour où il tient en production.",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/company/softvodooz"
+        },
+        {
+          "label": "Écrire",
+          "href": "mailto:contact@softvodooz.com"
+        }
+      ],
+      "box": {
+        "x": 543,
+        "y": 274,
+        "w": 122,
+        "h": 250
+      },
+      "focus": {
+        "x": 602,
+        "y": 314
+      }
+    },
+    {
+      "id": "p07",
+      "name": "Cédric Sossou",
+      "role": "Lead technique",
+      "line": "Mon meilleur outil, c'est la revue de code du vendredi.",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/company/softvodooz"
+        },
+        {
+          "label": "Écrire",
+          "href": "mailto:contact@softvodooz.com"
+        }
+      ],
+      "box": {
+        "x": 616,
+        "y": 268,
+        "w": 182,
+        "h": 440
+      },
+      "focus": {
+        "x": 688,
+        "y": 334
+      }
+    },
+    {
+      "id": "p08",
+      "name": "Damien Bio",
+      "role": "DevOps",
+      "line": "Si personne ne remarque le déploiement, c'est qu'il s'est bien passé.",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/company/softvodooz"
+        },
+        {
+          "label": "Écrire",
+          "href": "mailto:contact@softvodooz.com"
+        }
+      ],
+      "box": {
+        "x": 750,
+        "y": 258,
+        "w": 128,
+        "h": 380
+      },
+      "focus": {
+        "x": 796,
+        "y": 306
+      }
+    },
+    {
+      "id": "p09",
+      "name": "Aurélien Agossou",
+      "role": "Directeur technique",
+      "line": "On livre petit, on livre souvent, et on écoute avant de promettre.",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/company/softvodooz"
+        },
+        {
+          "label": "Écrire",
+          "href": "mailto:contact@softvodooz.com"
+        }
+      ],
+      "box": {
+        "x": 868,
+        "y": 150,
+        "w": 212,
+        "h": 512
+      },
+      "focus": {
+        "x": 962,
+        "y": 264
+      }
+    },
+    {
+      "id": "p10",
+      "name": "Océane Zinsou",
+      "role": "Cheffe de produit",
+      "line": "Je traduis le besoin du client en phrases que les développeurs acceptent.",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/company/softvodooz"
+        },
+        {
+          "label": "Écrire",
+          "href": "mailto:contact@softvodooz.com"
+        }
+      ],
+      "box": {
+        "x": 394,
+        "y": 408,
+        "w": 282,
+        "h": 294
+      },
+      "focus": {
+        "x": 520,
+        "y": 520
+      }
+    }
+  ]
+}

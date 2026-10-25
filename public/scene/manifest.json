@@ -1,0 +1,22 @@
+{
+  "builtAt": "2026-10-24T18:40:04.846Z",
+  "scene": {
+    "width": 1080,
+    "height": 768
+  },
+  "placeholder": false,
+  "cutouts": [
+    "p03",
+    "p09",
+    "p10"
+  ],
+  "missing": [
+    "p01",
+    "p02",
+    "p04",
+    "p05",
+    "p06",
+    "p07",
+    "p08"
+  ]
+}

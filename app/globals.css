@@ -1,0 +1,424 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------- tokens */
+
+:root {
+  --ink: #0b0908;
+  --paper: #f7f2e8;
+  --muted: #bcae9d;
+  --accent: #e2a75f;
+  --panel: rgba(16, 12, 10, 0.74);
+  --line: rgba(247, 242, 232, 0.16);
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  --serif: Georgia, "Times New Roman", serif;
+}
+
+html {
+  background: var(--ink);
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+h1,
+h2,
+p,
+dl,
+dd,
+dt,
+ul,
+li {
+  margin: 0;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------- scène */
+
+.projector {
+  position: relative;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.projector__viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.projector:not([data-ready]) .stage {
+  visibility: hidden;
+}
+
+.stage__base,
+.stage__blur img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.stage__blur {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  will-change: opacity;
+}
+
+/* Les silhouettes nettes se posent exactement sur le rectangle dont elles
+   sont issues : elles restent donc alignées quel que soit le cadrage. */
+.stage__sharp {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  will-change: opacity;
+}
+
+/* ------------------------------------------------------------ ouverture */
+
+.intro {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: clamp(1.25rem, 5vw, 4.5rem);
+  background: linear-gradient(
+    to top,
+    rgba(8, 6, 5, 0.78) 0%,
+    rgba(8, 6, 5, 0.28) 32%,
+    transparent 62%
+  );
+}
+
+.intro__title {
+  font-size: clamp(2.6rem, 7.5vw, 6.5rem);
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+.intro__claim {
+  max-width: 34ch;
+  color: var(--muted);
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  line-height: 1.5;
+}
+
+.intro__hint {
+  margin-top: 0.75rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(247, 242, 232, 0.55);
+}
+
+.intro__hint::before {
+  content: "";
+  display: inline-block;
+  width: 1.6rem;
+  height: 1px;
+  margin-right: 0.6rem;
+  vertical-align: middle;
+  background: currentColor;
+}
+
+/* --------------------------------------------------------------- fiches */
+
+.cards {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  width: min(380px, 32vw);
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.card--left {
+  left: clamp(1rem, 4vw, 4rem);
+}
+
+.card--right {
+  right: clamp(1rem, 4vw, 4rem);
+}
+
+.card__panel {
+  pointer-events: auto;
+  padding: 1.6rem 1.6rem 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--panel);
+  backdrop-filter: blur(18px) saturate(115%);
+  -webkit-backdrop-filter: blur(18px) saturate(115%);
+  box-shadow: 0 2rem 5rem -2.5rem rgba(0, 0, 0, 0.9);
+  transform: translateY(var(--y, 0px));
+}
+
+.card__index {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: rgba(247, 242, 232, 0.45);
+}
+
+.card__name {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.card__role {
+  margin-top: 0.3rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.card__line {
+  margin-top: 0.9rem;
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #e8decd;
+}
+
+.card__links {
+  display: flex;
+  gap: 1.1rem;
+  margin-top: 1.15rem;
+  font-size: 0.78rem;
+}
+
+.card__links a {
+  color: rgba(247, 242, 232, 0.7);
+  text-decoration: underline;
+  text-decoration-color: rgba(226, 167, 95, 0.45);
+  text-underline-offset: 0.25em;
+  transition: color 160ms ease;
+}
+
+.card__links a:hover {
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------------- final */
+
+.finale {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(8, 6, 5, 0.72) 0%,
+    rgba(8, 6, 5, 0.2) 70%
+  );
+}
+
+.finale__panel {
+  width: min(720px, 100%);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  background: var(--panel);
+  backdrop-filter: blur(20px) saturate(115%);
+  -webkit-backdrop-filter: blur(20px) saturate(115%);
+  text-align: center;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.35rem;
+}
+
+.stat dd {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--paper);
+}
+
+.stat dt {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.95rem 1.9rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #1a120a;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  background: #f0bd80;
+}
+
+/* --------------------------------------------------------------- pied */
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 1.6rem clamp(1.25rem, 5vw, 4.5rem) 2.6rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* --------------------------------------------------- version sans motion */
+
+.team-static {
+  display: none;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+.team-static__hero {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.team-static__hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.team-static__title {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  background: linear-gradient(to top, rgba(8, 6, 5, 0.85), transparent);
+}
+
+.team-static__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 1.5rem auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.team-static__card {
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: rgba(24, 19, 16, 0.6);
+}
+
+.team-static__finale {
+  margin: 1.5rem auto;
+}
+
+/* ---------------------------------------------------------------- mobile */
+
+@media (max-width: 760px) {
+  .card {
+    top: auto;
+    bottom: max(1rem, 4svh);
+    left: 0.9rem;
+    right: 0.9rem;
+    width: auto;
+    transform: none;
+  }
+
+  .card__panel {
+    padding: 1.1rem 1.1rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .card__name {
+    font-size: 1.2rem;
+  }
+
+  .card__line {
+    font-size: 0.92rem;
+  }
+}
+
+/* --------------------------------------------------------- accessibilité */
+
+@media (prefers-reduced-motion: reduce) {
+  .projector {
+    display: none;
+  }
+
+  .team-static {
+    display: block;
+  }
+}
